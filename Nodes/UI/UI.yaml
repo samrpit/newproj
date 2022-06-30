@@ -1,0 +1,287 @@
+Name: UI
+Type: FolderType
+Children:
+- Name: DefaultStyleSheet
+  Id: g=dd0a7100c897b13defc9891f2ec8987d
+  Type: StyleSheet
+  Children:
+  - Name: ButtonStyle
+    Type: ButtonStyle
+  - Name: ButtonAccentStyle
+    Type: ButtonStyle
+  - Name: DataInputStyle
+    Type: DataInputStyle
+  - Name: SwitchStyle
+    Type: SwitchStyle
+    Children:
+    - Name: Radius
+      Type: BaseDataVariableType
+      DataType: Size
+      Value: -1.0
+  - Name: GaugeStyle
+    Type: GaugeStyle
+    Children:
+    - Name: Radius
+      Type: BaseDataVariableType
+      DataType: Size
+      Value: -1.0
+  - Name: NavigationPanelStyle
+    Type: NavigationPanelStyle
+  - Name: ChartStyle
+    Type: ChartStyle
+  - Name: DataListStyle
+    Type: DataListStyle
+  - Name: ToolTipStyle
+    Type: ToolTipStyle
+  - Name: ScrollBarStyle
+    Type: ScrollBarStyle
+  - Name: AccordionStyle
+    Type: AccordionStyle
+  - Name: PieChartStyle
+    Type: PieChartStyle
+  - Name: HistogramChartStyle
+    Type: HistogramChartStyle
+  - Name: Radius
+    Type: BaseDataVariableType
+    DataType: Size
+    Value: 0.0
+  - Name: InteractiveColorGradientPercent
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+- Name: NativePresentationEngine
+  Type: NativePresentationEngine
+  ReferenceType: HasOrderedComponent
+  Children:
+  - Name: StartWindow
+    Type: NodePointer
+    DataType: NodeId
+    Value: {"IdType":2,"Id":"458aafb8287b82d86a645148c66bc5f2","Namespace":7}
+    Children:
+    - Name: Kind
+      Type: PropertyType
+      DataType: NodeId
+      Value: {"Id":12,"Namespace":3}
+  - Name: StyleSheet
+    Type: NodePointer
+    DataType: NodeId
+    Value: {"IdType":2,"Id":"dd0a7100c897b13defc9891f2ec8987d","Namespace":7}
+    Children:
+    - Name: Kind
+      Type: PropertyType
+      DataType: NodeId
+      Value: {"Id":447,"Namespace":3}
+  - Name: EnableVirtualKeyboard
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: false
+  - Name: StartingUser
+    Type: NodePointer
+    DataType: NodeId
+    Value: {"Id":46,"Namespace":1}
+    Children:
+    - Name: Kind
+      Type: PropertyType
+      DataType: NodeId
+      Value: {"Id":14,"Namespace":1}
+  - Name: Sessions
+    Type: BaseObjectType
+- Name: MainWindow
+  Id: g=458aafb8287b82d86a645148c66bc5f2
+  Supertype: Window
+  Children:
+  - Name: Width
+    Type: BaseDataVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 400.0
+  - Name: Height
+    Type: BaseDataVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 400.0
+  - Name: Tank1
+    Type: ScaleLayout
+    WriteMask: BrowseName|DataType|Description|DisplayName|MinimumSamplingInterval|UserAccessLevel
+    Children:
+    - Name: FillColor
+      Type: BaseDataVariableType
+      DataType: Color
+      Value: "#bbbdbf"
+    - Name: LevelColor
+      Type: BaseDataVariableType
+      DataType: Color
+      Value: "#00adee"
+    - Name: Level
+      Type: BaseDataVariableType
+      DataType: Double
+      Value: 0.0
+    - Name: MinLevel
+      Type: BaseDataVariableType
+      DataType: Double
+      Value: 0.0
+    - Name: MaxLevel
+      Type: BaseDataVariableType
+      DataType: Double
+      Value: 100.0
+    - Name: Width
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 124.4990005493164
+    - Name: Height
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 200.0
+    - Name: Equipment_x5F_Vessel_x5F_Outline
+      Type: Image
+      Children:
+      - Name: Width
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 124.4990005493164
+      - Name: Height
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 200.0
+      - Name: Path
+        Type: BaseDataVariableType
+        DataType: ResourceUri
+        Value: "ns=7;%PROJECTDIR%/res/Equipment_x5F_Tank_x5F_Outline.svg"
+    - Name: vessel_fill
+      Type: Image
+      Children:
+      - Name: Path
+        Type: BaseDataVariableType
+        DataType: ResourceUri
+        Value: "ns=7;%PROJECTDIR%/res/Tank_vessel_fill.svg"
+      - Name: Width
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 124.4990005493164
+      - Name: Height
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 200.0
+      - Name: DynamicColor
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#bbbdbf"
+        Children:
+        - Name: DynamicLink
+          Type: DataBind
+          DataType: NodePath
+          Value: "../../FillColor"
+    - Name: Tank_vessel_level
+      Type: LinearGauge
+      Children:
+      - Name: Value
+        Type: BaseDataVariableType
+        DataType: Float
+        Value: 70.0
+        Children:
+        - Name: DynamicLink
+          Type: DataBind
+          DataType: NodePath
+          Value: "../../Level"
+      - Name: MinValue
+        Type: BaseDataVariableType
+        DataType: Float
+        Value: 0.0
+        Children:
+        - Name: DynamicLink
+          Type: DataBind
+          DataType: NodePath
+          Value: "../../MinLevel"
+      - Name: MaxValue
+        Type: BaseDataVariableType
+        DataType: Float
+        Value: 100.0
+        Children:
+        - Name: DynamicLink
+          Type: DataBind
+          DataType: NodePath
+          Value: "../../MaxLevel"
+      - Name: WarningZones
+        Type: BaseObjectType
+      - Name: Width
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 119.61799621582031
+      - Name: Height
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 195.2729949951172
+      - Name: MajorTickCount
+        Type: BaseDataVariableType
+        DataType: Float
+        ModellingRule: Optional
+        Value: 0.0
+      - Name: Orientation
+        Type: BaseDataVariableType
+        DataType: OrientationEnum
+        ModellingRule: Optional
+        Value: 1
+      - Name: ImagePath
+        Type: BaseDataVariableType
+        DataType: ResourceUri
+        ModellingRule: Optional
+        Value: "ns=7;%PROJECTDIR%/res/Tank_LinearGauge_vessel_level.svg"
+      - Name: FillColor
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#00adee"
+        Children:
+        - Name: DynamicLink
+          Type: DataBind
+          DataType: NodePath
+          Value: "../../LevelColor"
+      - Name: ValueChangeBehaviour
+        Type: BaseDataVariableType
+        DataType: ValueChangeBehaviour
+        ModellingRule: Optional
+        Value: 1
+      - Name: LeftMargin
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 2.4407999515533447
+      - Name: TopMargin
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 2.361599922180176
+    - Name: Equipment_x5F_Vessel_x5F_Overlay
+      Type: Image
+      Children:
+      - Name: Width
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 124.4990005493164
+      - Name: Height
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 200.0
+      - Name: Path
+        Type: BaseDataVariableType
+        DataType: ResourceUri
+        Value: "ns=7;%PROJECTDIR%/res/Equipment_x5F_Tank_x5F_Overlay.svg"
+    - Name: LeftMargin
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 128.0
+    - Name: TopMargin
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 89.0

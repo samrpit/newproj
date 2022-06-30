@@ -1,1 +1,1 @@
-local file
+remote file

@@ -13,6 +13,8 @@ public class AlarmBannerLogic : BaseNetLogic
     public override void Start()
     {
         var context = LogicObject.Context;
+        
+        //comment added 
 
         affinityId = context.AssignAffinityId();
 
